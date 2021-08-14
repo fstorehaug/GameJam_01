@@ -18,7 +18,7 @@ public class DeathCounter : MonoBehaviour
     void Start()
     {
         deathCounterText.text = "Deaths: 0";
-        // TODO: Add subscription to "Death" event
+        KillScript.onDeath += updateNumDeaths;
     }
 
     // Update is called once per frame
