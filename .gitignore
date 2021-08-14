@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 # IDEA project
 /.idea
+
+# Ignore built game
+*.app
