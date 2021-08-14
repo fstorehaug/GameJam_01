@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class KillScript : MonoBehaviour
 {
     public GameObject plane;
     public AudioSource killSound;
+    public static UnityAction onDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +41,6 @@ public class KillScript : MonoBehaviour
         // Reset Plane
         plane.transform.position = Vector3.zero;
         plane.transform.rotation = Quaternion.identity;
+        onDeath?.Invoke();
     }
 }
