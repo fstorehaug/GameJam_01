@@ -27,6 +27,5 @@ public class KillScript : MonoBehaviour
         var rigidBody = other.GetComponent<Rigidbody>();
         rigidBody.velocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
-
     }
 }
