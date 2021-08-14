@@ -2,29 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class KillScript : MonoBehaviour
 {
-    public GameObject plane;
     public AudioSource killSound;
+    public static UnityAction onDeath;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (!other.tag.Equals("Player"))
         {
             return;
         }
         killSound.Play();
+        onDeath?.Invoke();
 
         // Reset Player position
         var playerTransform = other.transform;
@@ -36,8 +28,5 @@ public class KillScript : MonoBehaviour
         rigidBody.velocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
 
-        // Reset Plane
-        plane.transform.position = Vector3.zero;
-        plane.transform.rotation = Quaternion.identity;
     }
 }
