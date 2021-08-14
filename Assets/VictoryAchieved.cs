@@ -10,12 +10,13 @@ public class VictoryAchieved : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        victoryAchievedText.CrossFadeAlpha(0f, 0f, false);
+        this.gameObject.SetActive(false);
         Victory.onVictory += displayVictoryAchieved; 
     }
 
     public void displayVictoryAchieved()
     {
+        this.gameObject.SetActive(true);
         victoryAchievedText.CrossFadeAlpha(1.0f, 0.5f, false);
         victoryAchievedText.CrossFadeAlpha(0.0f, 5f, false);
 

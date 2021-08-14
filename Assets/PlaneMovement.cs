@@ -19,6 +19,7 @@ public class PlaneMovement : MonoBehaviour
     void Start()
     {
         KillScript.onDeath += resetPlane;
+        Victory.onVictory += resetPlane;
         movePlane.Enable();
         _desiredPitch = transform.rotation.eulerAngles.z;
         _desiredRoll = transform.rotation.eulerAngles.x;
