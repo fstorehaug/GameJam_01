@@ -6,33 +6,38 @@ using Plane = System.Numerics.Plane;
 public class CameraMovement : MonoBehaviour
 {
     public GameObject player;
-
     public GameObject plane;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
+    private float desierdDistance = 7f;
+    private float cameraMovespeed = 0.1f;
     // Update is called once per frame
     void Update()
     {
-        var t = transform;
-        t.LookAt(player.transform);
+        transform.position = Vector3.Lerp(transform.position, CalculateDesierdPosition(), 0.4f);
+        transform.LookAt(player.transform.position);
+    }
 
+    private Vector3 CalculateDesierdPosition()
+    {
+        Transform t = transform;
+        Vector3 desierdPosition = t.position;
         var distanceToPlayer = Vector3.Magnitude(t.position - player.transform.position);
-        var distanceToPlane = Vector3.Project(transform.position, plane.transform.up).magnitude;
+        var distanceToPlane = Vector3.Project(t.position, plane.transform.up).magnitude;
 
-        t.RotateAround(player.transform.position, plane.transform.up, .1f*(7-distanceToPlayer));
-
-        if (distanceToPlayer > 7)
+        if (distanceToPlayer > desierdDistance)
         {
-            t.Translate(t.forward *= .1f * distanceToPlayer);
+            desierdPosition += (player.transform.position - desierdPosition).normalized*(Mathf.Abs(distanceToPlayer - desierdDistance)*cameraMovespeed);
+        }
+        else
+        {
+            desierdPosition += (desierdPosition- player.transform.position).normalized * (Mathf.Abs(distanceToPlayer - desierdDistance) * cameraMovespeed);
         }
 
         if (distanceToPlane < 5)
         {
-            t.Translate(.1f * plane.transform.up);
+            desierdPosition += plane.transform.up * Mathf.Abs(5 - distanceToPlane) * cameraMovespeed; 
         }
+
+        return desierdPosition;
     }
 }
