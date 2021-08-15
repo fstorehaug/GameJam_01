@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class KillScript : MonoBehaviour
 {
-    public AudioSource killSound;
     public static UnityAction onDeath;
 
     private void OnTriggerExit(Collider other)
@@ -15,7 +14,6 @@ public class KillScript : MonoBehaviour
         {
             return;
         }
-        killSound.Play();
         onDeath?.Invoke();
     }
 }
