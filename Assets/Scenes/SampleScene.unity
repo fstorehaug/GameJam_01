@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.19588247, g: 0.098007776, b: 0.120039396, a: 1}
+  m_IndirectSpecularColor: {r: 0.19592407, g: 0.09793534, b: 0.12011028, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1898076164, guid: cd1208a8c7e984765836663ee1db3938, type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898076164, guid: cd1208a8c7e984765836663ee1db3938, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898076164, guid: cd1208a8c7e984765836663ee1db3938, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 599162520220415414, guid: cd1208a8c7e984765836663ee1db3938, type: 3}
       propertyPath: m_Name
       value: Player
@@ -178,6 +190,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884224623845771173, guid: cd1208a8c7e984765836663ee1db3938, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 3f5a83845c45f4ce3b5788b496640aa7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd1208a8c7e984765836663ee1db3938, type: 3}
 --- !u!1 &705507993
@@ -284,6 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 998474465707282515, guid: 3b1bc81763a6e4df89147f477c1f834d, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2887840413648087056, guid: 3b1bc81763a6e4df89147f477c1f834d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -375,6 +395,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 599162520220415414, guid: cd1208a8c7e984765836663ee1db3938, type: 3}
   m_PrefabInstance: {fileID: 322729585}
   m_PrefabAsset: {fileID: 0}
+--- !u!81 &771146379
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771146378}
+  m_Enabled: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,10 +508,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 774713307756527381, guid: 3b9c31d5c3cbd472b83a0e49cdebfbe7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1654373594619928957, guid: 3b9c31d5c3cbd472b83a0e49cdebfbe7, type: 3}
       propertyPath: m_Name
       value: Plane
@@ -532,10 +556,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9184645727106254012, guid: 3b9c31d5c3cbd472b83a0e49cdebfbe7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6d1f15bfb39764ab8888b4e3c85cc9a4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9c31d5c3cbd472b83a0e49cdebfbe7, type: 3}
 --- !u!1 &6834317271104621515 stripped
